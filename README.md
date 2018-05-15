@@ -1,0 +1,5 @@
+# 使用Electron开发的基于windows操作系统的桌面应用程序
+   客户端应用程序使用的是electron框架和serialport组件从串口获取数据,通过websocket的方式传到浏览器端.使用了electron-packager组件对electron应用进行打包，使用grunt打包应用完成自动更新
+
+## 使用electron和serialport进行开发
+  
