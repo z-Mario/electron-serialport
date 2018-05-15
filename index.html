@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>观云长称重组件V1.0.0</title>
+	<link rel="stylesheet" href="./bootstrap.css">
+	<style type="text/css">
+		html,body{
+			margin:0;
+			padding:0;
+			font-size: 12px;
+			font-weight: 700;
+			overflow: hidden;
+		}
+		.form-control{
+			display: inline-block;
+			width: 65%;
+			height: 30px;
+		}
+		.row{
+			margin: 10px auto;
+			overflow: hidden;
+		}
+		.row .form-group{
+			margin-bottom: 25px;
+		}
+		.status{
+			display: none;
+			white-space: nowrap;
+			word-break: keep-all;
+			color: #f00;
+			font-weight: normal;
+		}
+		.col-md-6{
+			float:left;
+			width:50%;
+			display: inline-block;
+		}
+		.showResult{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="COM" style="text-indent:1rem;">串口:</label>
+					<select class="form-control" id="COM"></select>
+				</div>
+				<div class="form-group">
+					<label for="dataBits">数据位:</label>
+					<select class="form-control" id="dataBits">
+						<option value="8">8</option>
+						<option value="7">7</option>
+						<option value="6">6</option>
+						<option value="5">5</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="parity">校验位:</label>
+					<select class="form-control" id="parity">
+						<option value="none">无</option>
+						<option value="even">偶校验</option>
+						<option value="odd">奇校验</option>
+					</select>
+				</div>					
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="baudRate">波特率:</label>
+					<select class="form-control" id="baudRate">
+						<option value="9600">9600</option>
+						<option value="19200">19200</option>
+						<option value="38400">38400</option>
+						<option value="57600">57600</option>
+						<option value="115200">115200</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="stopBits">停止位:</label>
+					<select class="form-control" id="stopBits">
+						<option value="1">1</option>
+						<option value="1.5">1.5</option>
+						<option value="2">2</option>
+					</select>
+				</div>				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6" style="line-height: 32px;">
+				<div class="form-group">
+					<label class="status">您尚未连接串口设备</label>
+					<label class="showResult" style="white-space: nowrap;word-break: keep-all;">读数:<span class="result" style="font-size:16px;color:#333;font-weight: bolder;"></span></label>
+				</div>
+			</div>
+			<div class="col-md-6 pull-right" style="text-align: right;">
+				<button class="btn btn-primary" id="connect" style="padding: 6px 24px;">确定</button>
+			</div>
+		</div>
+	</div>
+	<script src="./render.js"></script>
+</body>
+</html>

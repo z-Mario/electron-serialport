@@ -1,0 +1,42 @@
+{
+  "name": "WeigherGYC",
+  "version": "1.0.0",
+  "productName":"观云长称重组件1.0.0",
+  "description": "称重软件客户端应用程序",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "cd .\\node_modules\\serialport\\ && node-gyp rebuild --target=1.6.2 --arch=x64 --target_arch=x64 --dist-url=https://npm.taobao.org/mirrors/atom-shell",
+    "packageWin": "electron-packager . 观云长称重组件 --platform=win32 --arch=x64 --icon=./gyc_icon.ico --out=./dist  --app-version=1.0.0 --version-string.ProductName='观云长称重组件'  --ignore=\"(dist|src|docs|.gitignore|LICENSE|README.md|webpack.config.js|node_modules)\"",
+    "packageDarwin": "electron-packager . Weigher --platform=darwin --arch=x64  --out=./dist --asar --app-version=1.0.0 --ignore=\"(dist|src|docs|.gitignore|LICENSE|README.md|webpack.config*|node_modules)\"",
+    "packageLinux": "electron-packager . Weigher --platform=linux --arch=x64 --out=./dist --asar --app-version=1.0.0 --ignore=\"(dist|src|docs|.gitignore|LICENSE|README.md|webpack.config.js|node_modules)\""
+  },
+  "author": "LQ",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "serialport": "^6.1.1",
+    "ws": "^5.1.1",
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {
+    "electron": "^1.6.2",
+    "electron-packager": "^12.0.2",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "build": {
+    "appId": "com.gyc_wms.weigher",
+    "copyright": "乐麦信息技术(杭州)有限公司",
+    "productName": "观云长称重组件",
+    "dmg": {
+      "window": {
+        "x": 100,
+        "y": 100,
+        "width": 500,
+        "height": 300
+      }
+    },
+    "win": {
+      "icon": "./gyc.ico"
+    }
+  }
+}
